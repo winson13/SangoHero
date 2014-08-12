@@ -14,9 +14,9 @@ bool StartScene::init()
     bool bRet = false;
     do {
         CC_BREAK_IF(! Scene::init());
-        CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+        auto winSize = CCDirector::sharedDirector()->getWinSize();
         
-        CCMenuItem *startGameItem = CCMenuItemFont::create("start", this, menu_selector(StartScene::startGame));
+        auto *startGameItem = CCMenuItemFont::create("start", this, menu_selector(StartScene::startGame));
         CC_BREAK_IF(!startGameItem);
         
         startGameItem->setPosition(ccp(winSize.width/2 , winSize.height/2));
